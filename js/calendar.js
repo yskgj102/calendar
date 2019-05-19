@@ -71,6 +71,7 @@ for (i = 1; i <= enddate; i++) { //　日付を書き出す
     termDay += 6;
   }
   console.log(new Date(new Date().getFullYear, new Date().getMonth, new Date().getDay).getDate());
+console.log(day2.getDate());
   if (day2.getDate() == new Date(new Date().getFullYear, new Date().getMonth, new Date().getDay).getDate()) {
     document.write(' style="color:green"');
   } else if (termDay % 6 == 0 || termDay % 6 == 1 || termDay % 6 == 2) {
