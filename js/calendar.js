@@ -78,6 +78,7 @@ for (i = 1; i <= enddate; i++) { //　日付を書き出す
     if (!(termDay % 6 == 2 && day2.getDay() == 0)) {
       if (!(termDay % 6 == 2 && day2.getDay() == 3)) {
         document.write(' style="color:red"');
+        console.log("not in");
       }
     }
   }
