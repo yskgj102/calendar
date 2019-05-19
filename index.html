@@ -4,9 +4,8 @@
 	<title>カレンダー</title>
 	<link rel="stylesheet" href="./css/stylesheet.css">
 </head>
-<h1 align="center">Calendar</h1>
-
-<body>
+<header align="center">
+	<h1 align="center">Calendar</h1>
 	<script class="today">
 		function displayToday() {
 			var today = new Date();
@@ -53,8 +52,12 @@
 		displayToday();
 		document.write("　");
 		displayPropertyToday();
-
 	</script>
+</header>
+
+<body>
+
+
 	<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
 		<script language="JavaScript" src="./js/calendar.js">
 
@@ -62,5 +65,8 @@
 
 	</table>
 </body>
+<footer style="font-size:20px">
+*検索機能追加予定
+</footer>
 
 </html>
