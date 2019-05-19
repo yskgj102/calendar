@@ -2,7 +2,7 @@
 
 <head>
 	<title>カレンダー</title>
-		<link rel="stylesheet" href="stylesheet.css">
+	<link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
@@ -73,18 +73,18 @@
 				// if (count % 7 == 6) {
 				// 	document.write(' style="color:blue"');
 				// }
-				var day1 = new Date(2019, (5-1), 4);
-				var day2 = new Date(year, month-1, i);
+				var day1 = new Date(2019, (5 - 1), 4);
+				var day2 = new Date(year, month - 1, i);
 				//差日を求める（86,400,000ミリ秒＝１日）
 				var termDay = (Math.floor((day2 - day1) / 86400000));
-				while (termDay < 0){
+				while (termDay < 0) {
 					termDay += 6;
 				}
 				if (termDay % 6 == 0 || termDay % 6 == 1 || termDay % 6 == 2) {
 					if (!(termDay % 6 == 2 && day2.getDay() == 0)) {
 						if (!(termDay % 6 == 2 && day2.getDay() == 3)) {
-						//	calendar += " class=\"holiday\"";
-								document.write(' style="color:red"');
+							//	calendar += " class=\"holiday\"";
+							document.write(' style="color:red"');
 						}
 					}
 				}
