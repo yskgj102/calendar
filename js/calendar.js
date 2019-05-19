@@ -70,8 +70,8 @@ for (i = 1; i <= enddate; i++) { //　日付を書き出す
   while (termDay < 0) {
     termDay += 6;
   }
-  console.log(new Date(today.getFullYear, today.getMonth, today.getDay).getDate());
-  if (day2.getDate() == new Date(today.getFullYear, today.getMonth, today.getDay).getDate()) {
+  console.log(new Date(new Date().getFullYear, new Date().getMonth, new Date().getDay).getDate());
+  if (day2.getDate() == new Date(new Date().getFullYear, new Date().getMonth, new Date().getDay).getDate()) {
     document.write(' style="color:green"');
   } else if (termDay % 6 == 0 || termDay % 6 == 1 || termDay % 6 == 2) {
     if (!(termDay % 6 == 2 && day2.getDay() == 0)) {
