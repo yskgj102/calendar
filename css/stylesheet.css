@@ -1,0 +1,7 @@
+body{
+background-color: rgb(90, 182, 195);
+background-image: url("/Users/yamaokaryohei/Desktop/calendar/img/IMG_0380.jpg");
+}
+body tr {
+  font-size: 60px;
+}
