@@ -66,14 +66,14 @@
 					document.write('<tr>');
 				}
 				document.write('<td align="right"');
-				if (count % 7 == 0) {
-					document.write(' style="color:red"');
-				}
-				if (count % 7 == 6) {
-					document.write(' style="color:blue"');
-				}
+				// if (count % 7 == 0) {
+				// 	document.write(' style="color:red"');
+				// }
+				// if (count % 7 == 6) {
+				// 	document.write(' style="color:blue"');
+				// }
 				var day1 = new Date(2019, (5-1), 4);
-				var day2 = new Date(year, month, i);
+				var day2 = new Date(year, month-1, i);
 				//差日を求める（86,400,000ミリ秒＝１日）
 				var termDay = (Math.floor((day2 - day1) / 86400000));
 				while (termDay < 0){
