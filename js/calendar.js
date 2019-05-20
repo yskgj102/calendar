@@ -35,7 +35,7 @@ document.write('<a href="./index?/', nextyear, '/', nextmonth, '/" ">次月≫</
 document.write('</td>');
 document.write('</tr>');
 document.write('<tr>');
-document.write('<a href="./index">Today</a>');
+document.write('<a href="./">今月</a>');
 document.write('<td align="center" style="color:red">日</td>');
 document.write('<td align="center" >月</td>');
 document.write('<td align="center" >火</td>');
