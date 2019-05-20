@@ -7,11 +7,12 @@
 	<script type="text/javascript">
 		$(function() {
 			//ページ内のaタグ群を取得。aTagsに配列として代入。
-			var aTags = $('a');
+			var aTags = $('button');
+			//var aTags2 = $('onclick');
 			//全てのaタグについて処理
 			aTags.each(function() {
 				//aタグのhref属性からリンク先url取得
-				var url = $(this).attr('href');
+				var url = $(this).attr('onclick');
 				//念のため、href属性は削除
 				$(this).removeAttr('href');
 				
@@ -20,6 +21,7 @@
 					location.href = url;
 				});
 			});
+
 		});
 	</script>
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -98,7 +100,7 @@
 </body>
 <footer style="font-size:10px">
 	<script>
-		document.write("b");
+		document.write("ccadadsc");
 	</script>
 	<p>*検索機能追加予定</p>
 </footer>
