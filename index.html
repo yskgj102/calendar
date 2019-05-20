@@ -14,6 +14,7 @@
 				var url = $(this).attr('href');
 				//念のため、href属性は削除
 				$(this).removeAttr('href');
+				
 				//クリックイベントをバインド
 				$(this).click(function() {
 					location.href = url;
