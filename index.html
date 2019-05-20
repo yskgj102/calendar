@@ -20,16 +20,7 @@
 					location.href = url;
 				});
 			});
-			aTags2.each(function() {
-				//aタグのhref属性からリンク先url取得
-				var url = $(this).attr('href');
-				//念のため、href属性は削除
-				$(this).removeAttr('href');
-				//クリックイベントをバインド
-				$(this).click(function() {
-					location.href = url;
-				});
-			});
+
 		});
 	</script>
 	<meta name="apple-mobile-web-app-capable" content="yes">
