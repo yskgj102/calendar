@@ -28,15 +28,15 @@ if (prevmonth < 1) {
 }
 document.write('<tr>');
 document.write('<td colspan="7" align="center">');
-document.write('<button type="button"　href="./index?/', prevyear, '/', prevmonth, '/">≪前月</button>');
+document.write('<button type="button"　onclick=location.href="./index?/"', prevyear, '/', prevmonth, '/">≪前月</button>');
 document.write(year, '<span ">年</span>');
 document.write(month, '<span >月</span>　');
-document.write('<button type="button"　href="./index?/', nextyear, '/', nextmonth, '/">次月≫</button>');
+document.write('<button type="button"　honclick=location.href="./index?/', nextyear, '/', nextmonth, '/">次月≫</button>');
 document.write('</td>');
 document.write('</tr>');
 document.write('<tr>');
 document.write('<center>');
-document.write('<button type="button"　href="./">今月</button>');
+document.write('<button type="button"　onclick=location.href="./">今月</button>');
 document.write('</center>');
 document.write('<td align="center" style="color:red">日</td>');
 document.write('<td align="center" >月</td>');
