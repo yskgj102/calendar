@@ -12,9 +12,9 @@
 			//全てのaタグについて処理
 			aTags.each(function() {
 				//aタグのhref属性からリンク先url取得
-				var url = $(this).attr('href');
+				var url = $(this).attr('onclick');
 				//念のため、href属性は削除
-				$(this).removeAttr('href');
+				$(this).removeAttr('onclick');
 				//クリックイベントをバインド
 				$(this).click(function() {
 					location.href = url;
@@ -99,7 +99,7 @@
 </body>
 <footer style="font-size:10px">
 	<script>
-		document.write("cccccccc");
+		document.write("ccadadsc");
 	</script>
 	<p>*検索機能追加予定</p>
 </footer>
