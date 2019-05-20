@@ -36,7 +36,7 @@ document.write('</td>');
 document.write('</tr>');
 document.write('<tr>');
 document.write('<center>');
-document.write('<a href="./index">今月</a>');
+document.write('<a href="./">今月</a>');
 document.write('</center>');
 document.write('<td align="center" style="color:red">日</td>');
 document.write('<td align="center" >月</td>');
