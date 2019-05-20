@@ -31,7 +31,7 @@ document.write('<td colspan="7" align="center">');
 document.write('<button type="button"　onclick="location.href=&#39;./index?/', prevyear, '/', prevmonth, '/&#39;">≪前月</button>');
 document.write(year, '<span ">年</span>');
 document.write(month, '<span >月</span>　');
-document.write('<button type="button"　onclick="location.href=&#39;./index?/', nextyear, '/', nextmonth, '&#39;/">次月≫</button>');
+document.write('<button type="button"　onclick="location.href=&#39;./index?/', nextyear, '/', nextmonth, '/&#39;">次月≫</button>');
 document.write('</td>');
 document.write('</tr>');
 document.write('<tr>');
