@@ -5,8 +5,8 @@
 	<link rel="stylesheet" href="./css/stylesheet.css">
 	<script type="text/javascript" src="assets/lib/jquery-2.0.0.min.js"></script>
 	<script type="text/javascript">
-		$(function(){
-			$('a').click(function(){
+		$(function() {
+			$('a').click(function() {
 				location.href = $(this).attr('href');
 				return false;
 			});
@@ -24,7 +24,8 @@
 	</style>
 </head>
 <header align="center">
-	<h1 align="center">Calendar</h1>
+	<h1 align="center">Calendar
+	</h1>
 	<script class="today">
 		function displayToday() {
 			var today = new Date();
@@ -86,7 +87,10 @@
 	</table>
 </body>
 <footer style="font-size:20px">
-	*検索機能追加予定
+	<script>
+		document.write(new Date().getFullYear(),'/',new Date().getMonth()+1,'/',new Date().getDate(),' ');
+	</script>version
+	<p>*検索機能追加予定</p>
 </footer>
 
 </html>
