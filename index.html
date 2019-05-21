@@ -96,13 +96,20 @@
 	<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
 		<script language="JavaScript" src="./js/calendar.js">
 
+
 		</script>
 
 	</table>
 </body>
 <footer style="font-size:10px">
 	<script>
-		document.write("ccadadsc");
+	navigator.geolocation.getCurrentPosition(function(evt) {
+	console.log(evt);
+	document.write("lat: " + evt.coords.latitude);
+	document.write("<br />");
+	document.write("long:" + evt.coords.longitude);
+});
+		document.write("ccadadscsss");
 	</script>
 	<p>*検索機能追加予定</p>
 </footer>
