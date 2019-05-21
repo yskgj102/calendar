@@ -28,9 +28,9 @@ if (prevmonth < 1) {
 }
 document.write('<tr>');
 document.write('<td colspan="7" align="center">');
-document.write('<a href="./index?/', prevyear, '/', prevmonth, '/">≪前月</a>');
+document.write('<a href="./index?/', prevyear, '/', prevmonth, '/">≪前月</a> ');
 document.write(year, '<span ">年</span>');
-document.write(month, '<span >月</span>　');
+document.write(month, '<span >月</span> ');
 document.write('<a href="./index?/', nextyear, '/', nextmonth, '/">次月≫</a>');
 document.write('</td>');
 document.write('</tr>');
