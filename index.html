@@ -44,15 +44,19 @@
 	<ons-page>
 
 		<ons-toolbar>
-			<center><div class=”center” style="font-size:30px;">Calendar
-			</div></center>
+			<div class=”center” style="font-size:30px;">Calendar
+			</div>
 		</ons-toolbar>
 		<!-- ここにページの内容を記述します -->
 		<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
 			<script language="JavaScript" src="./js/calendar.js">
 			</script>
+			<button >
+			<a href="./">	reload</a>
+			</button>
 			<center>
 			<script type="text/javascript" class="today">
+
 					function displayToday() {
 						var today = new Date();
 						var dayOfWeek = today.getDay();
