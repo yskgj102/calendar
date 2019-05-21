@@ -1,3 +1,5 @@
+
+
 if (location.search.indexOf("/") > 0) { //　年月取得
   query = new Array();
   query = location.search.split("/");
@@ -28,15 +30,15 @@ if (prevmonth < 1) {
 }
 document.write('<tr>');
 document.write('<td colspan="7" align="center">');
-document.write('<a href="./index?/', prevyear, '/', prevmonth, '/">≪前月</a> ');
+document.write('<button><a href="./index?/', prevyear, '/', prevmonth, '/">≪前月</a></button> ');
 document.write(year, '<span ">年</span>');
 document.write(month, '<span >月</span> ');
-document.write('<a href="./index?/', nextyear, '/', nextmonth, '/">次月≫</a>');
+document.write('<button><a href="./index?/', nextyear, '/', nextmonth, '/">次月≫</a></button>');
 document.write('</td>');
 document.write('</tr>');
 document.write('<tr>');
 document.write('<center>');
-document.write('<a href="./">今月</a>');
+document.write('<button><a href="./">今月</a></button>');
 document.write('</center>');
 document.write('<td align="center" style="color:red">日</td>');
 document.write('<td align="center" >月</td>');

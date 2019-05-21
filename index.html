@@ -40,15 +40,19 @@
 	</style>
 </head>
 
-
-
-
-
 <body>
 	<ons-page>
+
 		<ons-toolbar>
-			<div class=”center”>Calendar
-				<script class="today">
+			<center><div class=”center” style="font-size:30px;">Calendar
+			</div></center>
+		</ons-toolbar>
+		<!-- ここにページの内容を記述します -->
+		<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
+			<script language="JavaScript" src="./js/calendar.js">
+			</script>
+			<center>
+			<script type="text/javascript" class="today">
 					function displayToday() {
 						var today = new Date();
 						var dayOfWeek = today.getDay();
@@ -94,13 +98,9 @@
 					displayToday();
 					document.write("　");
 					displayPropertyToday();
-				</script></div>
-		</ons-toolbar>
-		<!-- ここにページの内容を記述します -->
-		<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
-			<script language="JavaScript" src="./js/calendar.js">
-			</script>
+				</script></center>
 		</table>
+
 	</ons-page>
 
 </body>
