@@ -1,116 +1,78 @@
 <html>
+    <head>
+			<meta http-equiv="Pragma" content="no-cache">
+			<meta http-equiv="Cache-Control" content="no-cache">
+			<script src="js/jquery-2.0.0.min.js"></script>
+			<script type="text/javascript">
+				$(function() {
+					//ページ内のaタグ群を取得。aTagsに配列として代入。
+					var aTags = $('a');
+					//全てのaタグについて処理
+					aTags.each(function() {
+						//aタグのhref属性からリンク先url取得
+						var url = $(this).attr('href');
+						//念のため、href属性は削除
+						$(this).removeAttr('href');
 
-<head>
-	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
-	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-	<title>勤務カレンダー</title>
-	<meta http-equiv="Pragma" content="no-cache">
-	<meta http-equiv="Cache-Control" content="no-cache">
-	<link rel="stylesheet" href="./css/stylesheet.css">
-	<script src="js/jquery-2.0.0.min.js"></script>
-	<script type="text/javascript">
-		$(function() {
-			//ページ内のaタグ群を取得。aTagsに配列として代入。
-			var aTags = $('a');
-			//全てのaタグについて処理
-			aTags.each(function() {
-				//aタグのhref属性からリンク先url取得
-				var url = $(this).attr('href');
-				//念のため、href属性は削除
-				$(this).removeAttr('href');
+						//クリックイベントをバインド
+						$(this).click(function() {
+							location.href = url;
+						});
+					});
 
-				//クリックイベントをバインド
-				$(this).click(function() {
-					location.href = url;
 				});
-			});
-
-		});
-	</script>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-	<link rel="apple-touch-icon" href="./img/tower.png">
-	<style>
-		* {
-			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-			-webkit-touch-callout: none;
-			-webkit-user-select: none;
-		}
-	</style>
-</head>
-
-<body>
-	<ons-page>
-
-		<ons-toolbar>
-			<div class=”center” style="font-size:30px;">Calendar
-			</div>
-
-		</ons-toolbar>
-		<!-- ここにページの内容を記述します -->
-
-		<audio src="./music/m.ma4"><p>音声を再生するには、audioタグをサポートしたブラウザが必要です。</p>
-</audio>
-		<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
-			<script language="JavaScript" src="./js/calendar.js">
 			</script>
-			<button >
-			<a href="./">	reload</a>
-			</button>
-			<center>
-			<script type="text/javascript" class="today">
-
-					function displayToday() {
-						var today = new Date();
-						var dayOfWeek = today.getDay();
-						var dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek]; // 曜日(日本語表記)
-						var text = "Today : " + today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate() + "(" + dayOfWeekStr + ")";
-						document.write(text);
+			<script type="text/javascript" language="javascript">
+			function onButtonClick() {
+				target = document.getElementById("output");
+				target.innerText = document.forms.id_form1.id_textBox1.value;
+				//target.innerText = document.id_form1.id_textBox1.value;//これでもOK
+			}
+</script>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>ログイン</title>
+				<meta name="apple-mobile-web-app-capable" content="yes">
+				<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+				<link rel="apple-touch-icon" href="./img/tower.png">
+				<style>
+					* {
+						-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+						-webkit-touch-callout: none;
+						-webkit-user-select: none;
 					}
+				</style>
+    </head>
+    <body>
+        <h1>ログイン</h1>
+        <hr>
+        <div align="center">
+            <table border="0">
+                <form action="list.html" method="get">
+                    <tr>
+                        <th>
+                            ユーザID
+                        </th>
+                        <td>
+                            <input type="text" name="user_id" value="" size="24">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            パスワード
+                        </th>
+                        <td>
+                            <input type="password" name="password" value="" size="24">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" value="ログイン" onclick="location.href='./ui-1.html'">
+                        </td>
+                    </tr>
+                </form>
 
-					function displayPropertyToday() {
-						var today = new Date();
-						var dayOfWeek = today.getDay();
-
-						var day1 = new Date(2019, (5 - 1), 4);
-						var day2 = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
-						//差日を求める（86,400,000ミリ秒＝１日）
-						var termDay = (Math.floor((day2 - day1) / 86400000));
-						while (termDay < 0) {
-							termDay += 6;
-						}
-						if (termDay % 6 == 1 || termDay % 6 == 2) {
-							if (!(termDay % 6 == 2 && day2.getDay() == 0)) {
-								if (!(termDay % 6 == 2 && day2.getDay() == 3)) {
-									document.write("休日");
-								}
-							}
-						}
-						if (termDay % 6 == 0) {
-							document.write("夜勤明け");
-						}
-						if ((termDay % 6 == 2 && day2.getDay() == 0) || (termDay % 6 == 2 && day2.getDay() == 3)) {
-							document.write("早番");
-						} else if (termDay % 6 == 3) {
-							document.write("早番");
-						}
-						if (termDay % 6 == 4) {
-							document.write("仕事");
-						}
-						if (termDay % 6 == 5) {
-							document.write("夜勤");
-						}
-
-					}
-					displayToday();
-					document.write("　");
-					displayPropertyToday();
-				</script></center>
-		</table>
-
-	</ons-page>
-
-</body>
-
+            </table>
+						<button onclick="location.href='./ui-1.html'">遷移</button>
+        </div>
+    </body>
 </html>
