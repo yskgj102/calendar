@@ -42,76 +42,85 @@
 <body>
 
 
-<center>
-			<div class=”center” style="font-size:30px;">Calendar
-			</div>
-</center>
+	<center>
+		<div class=”center” style="font-size:30px;">Calendar
+		</div>
+	</center>
 
-		<!-- ここにページの内容を記述します -->
-
+	<!-- ここにページの内容を記述します -->
+<br><br><br>
+	<center>
 
 		<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
 			<script language="JavaScript" src="./js/calendar.js">
 			</script>
-			<button >
-			<a href="./">	reload</a>
-			</button>
-			<center>
+
+
+
 			<script type="text/javascript" class="today">
+				function displayToday() {
+					var today = new Date();
+					var dayOfWeek = today.getDay();
+					var dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek]; // 曜日(日本語表記)
+					var text = today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate() + "(" + dayOfWeekStr + ")";
+					document.write(text);
+				}
 
-					function displayToday() {
-						var today = new Date();
-						var dayOfWeek = today.getDay();
-						var dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek]; // 曜日(日本語表記)
-						var text = "Today : " + today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate() + "(" + dayOfWeekStr + ")";
-						document.write(text);
+				function displayPropertyTheDay(day) {
+
+					var dayOfWeek = day.getDay();
+
+					var day1 = new Date(2019, (5 -1), 4);
+					var day2 = new Date(day.getFullYear(), day.getMonth() , day.getDate());
+					//差日を求める（86,400,000ミリ秒＝１日）
+
+					var termDay = (Math.floor((day2 - day1) / 86400000));
+
+					while (termDay < 0) {
+
+						termDay += 6;
 					}
-
-					function displayPropertyToday() {
-						var today = new Date();
-						var dayOfWeek = today.getDay();
-
-						var day1 = new Date(2019, (5 - 1), 4);
-						var day2 = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
-						//差日を求める（86,400,000ミリ秒＝１日）
-						var termDay = (Math.floor((day2 - day1) / 86400000));
-						while (termDay < 0) {
-							termDay += 6;
-						}
-						if (termDay % 6 == 1 || termDay % 6 == 2) {
-							if (!(termDay % 6 == 2 && day2.getDay() == 0)) {
-								if (!(termDay % 6 == 2 && day2.getDay() == 3)) {
-									document.write("休日");
-								}
+					if (termDay % 6 == 1 || termDay % 6 == 2) {
+						if (!(termDay % 6 == 2 && day2.getDay() == 0)) {
+							if (!(termDay % 6 == 2 && day2.getDay() == 3)) {
+								document.write("休日");
 							}
 						}
-						if (termDay % 6 == 0) {
-							document.write("夜勤明け");
-						}
-						if ((termDay % 6 == 2 && day2.getDay() == 0) || (termDay % 6 == 2 && day2.getDay() == 3)) {
-							document.write("早番");
-						} else if (termDay % 6 == 3) {
-							document.write("早番");
-						}
-						if (termDay % 6 == 4) {
-							document.write("仕事");
-						}
-						if (termDay % 6 == 5) {
-							document.write("夜勤");
-						}
-
 					}
-					displayToday();
-					document.write("　");
-					displayPropertyToday();
-				</script></center>
-		</table>
+					if (termDay % 6 == 0) {
+						document.write("夜勤明け");
+					}
+					if ((termDay % 6 == 2 && day2.getDay() == 0) || (termDay % 6 == 2 && day2.getDay() == 3)) {
+						document.write("早番");
+					} else if (termDay % 6 == 3) {
+						document.write("早番");
+					}
+					if (termDay % 6 == 4) {
+						document.write("仕事");
+					}
+					if (termDay % 6 == 5) {
+						document.write("夜勤");
+					}
+
+				}
+				displayToday();
+				document.write("　");
+
+				var day = new Date();
+
+
+				displayPropertyTheDay(day);
+			</script>
+	</center>
+	</table>
 
 
 </body>
 <footer>
+
 	2019/05/14 ver 0.0 初版</br>
 	2019/06/08 ver 0.1 チャット機能の実装、UI修正
+
 </footer>
 
 
