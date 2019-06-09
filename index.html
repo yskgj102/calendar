@@ -56,7 +56,7 @@
 			if (url2.split("/")[8] !== undefined) {
 				day = new Date(url2.split("/")[5], url2.split("/")[6] - 1, url2.split("/")[7]);
 			}
-			document.write('<input type="date" id="setDate" value="', day.getFullYear(),'/',day.getMonth()+1,'/',day.getDate(), '"></center><br><br>');
+			document.write('<input type="date" id="setDate" value="', day.getFullYear(),'-',day.getMonth()+1,'-',day.getDate(), '"></center><br><br>');
 		</script>
 		<center>
 
