@@ -84,7 +84,7 @@ for (i = 1; i <= enddate; i++) { //　日付を書き出す
       }
     }
   }
-  document.write('>', i, '</td>');
+  document.write('><a href="./index?/',year,'/',month-1,'/',i,'/">', i, '</a></td>');
   ++count;
   if (count % 7 == 0) {
     document.write('</tr>');
