@@ -20,12 +20,17 @@ header h2::after {
   border-radius: 4px;
 }
 
-.dayinfo{
-	  font-size: 22px;
+.dayinfo {
+  font-size: 22px;
 }
+
 footer {
   font-size: 7px;
-	position: relative;
-	padding: .75em 1em .75em 1.5em;
-	border: 1px solid #ccc;
+  position: relative;
+  padding: .75em 1em .75em 1.5em;
+  border: 1px solid #ccc;
+}
+
+footer .under1{
+  text-decoration: underline;
 }
