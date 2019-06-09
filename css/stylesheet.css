@@ -2,13 +2,13 @@ body {}
 
 body tr {}
 
-header h1 {
+header h2 {
   position: relative;
   padding: .75em 1em .75em 1.5em;
   border: 1px solid #ccc;
 }
 
-header h1::after {
+header h2::after {
   position: absolute;
   top: .5em;
   left: .5em;
@@ -22,4 +22,7 @@ header h1::after {
 
 footer {
   font-size: 7px;
+	position: relative;
+	padding: .75em 1em .75em 1.5em;
+	border: 1px solid #ccc;
 }

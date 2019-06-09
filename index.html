@@ -40,17 +40,16 @@
 </head>
 <header>
 
-<h1>Hello
-
-	<script type="text/javascript" class="today">
-		var url2 = location.href;
-		var day = new Date();
-		if (url2.split("/")[8] !== undefined) {
-			day = new Date(url2.split("/")[5], url2.split("/")[6] - 1, url2.split("/")[7]);
-		}
-		document.write('<input type="date" id="setDate" value="', day.getFullYear(),'-',('0' + (day.getMonth()+1)).slice(-2),'-',('0' + (day.getDate())).slice(-2), '"></center>');
-	</script>
-		</h1>
+	<h2>My Calendar
+		<script type="text/javascript" class="today">
+			var url2 = location.href;
+			var day = new Date();
+			if (url2.split("/")[8] !== undefined) {
+				day = new Date(url2.split("/")[5], url2.split("/")[6] - 1, url2.split("/")[7]);
+			}
+			document.write('<input type="date" id="setDate" value="', day.getFullYear(), '-', ('0' + (day.getMonth() + 1)).slice(-2), '-', ('0' + (day.getDate())).slice(-2), '"></center>');
+		</script>
+	</h2>
 </header>
 
 <body>
@@ -60,88 +59,88 @@
 	<br><br>
 
 
-			<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
-				<script language="JavaScript" src="./js/calendar.js">
-				</script>
+	<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
+		<script language="JavaScript" src="./js/calendar.js">
+		</script>
 
 
+		<center>
+			<script type="text/javascript" class="today">
+				function displayTheDay(day) {
+					var dayOfWeek = day.getDay();
+					var dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek]; // 曜日(日本語表記)
+					var text = day.getFullYear() + "/" + (day.getMonth() + 1) + "/" + day.getDate() + "(" + dayOfWeekStr + ")";
+					document.write(text);
+				}
 
-				<script type="text/javascript" class="today">
-					function displayTheDay(day) {
-						var dayOfWeek = day.getDay();
-						var dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek]; // 曜日(日本語表記)
-						var text = day.getFullYear() + "/" + (day.getMonth() + 1) + "/" + day.getDate() + "(" + dayOfWeekStr + ")";
-						document.write(text);
+				function displayPropertyTheDay(day) {
+
+					var dayOfWeek = day.getDay();
+
+					var day1 = new Date(2019, (5 - 1), 4);
+					var day2 = new Date(day.getFullYear(), day.getMonth(), day.getDate());
+					//差日を求める（86,400,000ミリ秒＝１日）
+
+					var termDay = (Math.floor((day2 - day1) / 86400000));
+
+					while (termDay < 0) {
+
+						termDay += 6;
 					}
-
-					function displayPropertyTheDay(day) {
-
-						var dayOfWeek = day.getDay();
-
-						var day1 = new Date(2019, (5 - 1), 4);
-						var day2 = new Date(day.getFullYear(), day.getMonth(), day.getDate());
-						//差日を求める（86,400,000ミリ秒＝１日）
-
-						var termDay = (Math.floor((day2 - day1) / 86400000));
-
-						while (termDay < 0) {
-
-							termDay += 6;
-						}
-						if (termDay % 6 == 1 || termDay % 6 == 2) {
-							if (!(termDay % 6 == 2 && day2.getDay() == 0)) {
-								if (!(termDay % 6 == 2 && day2.getDay() == 3)) {
-									document.write("休日");
-								}
-							}
-						}
-						if (termDay % 6 == 3) {
-							if (((day2.getDay() == 1) || (day2.getDay() == 4))) {
+					if (termDay % 6 == 1 || termDay % 6 == 2) {
+						if (!(termDay % 6 == 2 && day2.getDay() == 0)) {
+							if (!(termDay % 6 == 2 && day2.getDay() == 3)) {
 								document.write("休日");
 							}
+						}
+					}
+					if (termDay % 6 == 3) {
+						if (((day2.getDay() == 1) || (day2.getDay() == 4))) {
+							document.write("休日");
+						}
 
-						}
-						if (termDay % 6 == 0) {
-							document.write("夜勤明け");
-						}
-						if ((termDay % 6 == 2 && day2.getDay() == 0) || (termDay % 6 == 2 && day2.getDay() == 3)) {
+					}
+					if (termDay % 6 == 0) {
+						document.write("夜勤明け");
+					}
+					if ((termDay % 6 == 2 && day2.getDay() == 0) || (termDay % 6 == 2 && day2.getDay() == 3)) {
+						document.write("早番");
+					}
+					if (termDay % 6 == 3) {
+						if (!((day2.getDay() == 1) || (day2.getDay() == 4))) {
 							document.write("早番");
 						}
-						if (termDay % 6 == 3) {
-							if (!((day2.getDay() == 1) || (day2.getDay() == 4))) {
-								document.write("早番");
-							}
-						}
-						if (termDay % 6 == 4) {
-							document.write("仕事");
-						}
-						if (termDay % 6 == 5) {
-							document.write("夜勤");
-						}
-
 					}
-					var day = new Date();
-
-					document.write("　");
-
-
-					document.getElementById("setDate").onchange = function() {
-						var date = document.getElementById("setDate").value;
-						var url = './index?/' + date.split("-")[0] + '/' + date.split("-")[1] + '/' + date.split("-")[2] + "/";
-						location.href = url;
-
-					};
-					var url2 = location.href;
-
-					if (url2.split("/")[8] !== undefined) {
-						day = new Date(url2.split("/")[5], url2.split("/")[6] - 1, url2.split("/")[7]);
+					if (termDay % 6 == 4) {
+						document.write("仕事");
+					}
+					if (termDay % 6 == 5) {
+						document.write("夜勤");
 					}
 
-					displayTheDay(day);
-					displayPropertyTheDay(day);
-				</script>
+				}
+				var day = new Date();
+
+				document.write("　");
+
+
+				document.getElementById("setDate").onchange = function() {
+					var date = document.getElementById("setDate").value;
+					var url = './index?/' + date.split("-")[0] + '/' + date.split("-")[1] + '/' + date.split("-")[2] + "/";
+					location.href = url;
+
+				};
+				var url2 = location.href;
+
+				if (url2.split("/")[8] !== undefined) {
+					day = new Date(url2.split("/")[5], url2.split("/")[6] - 1, url2.split("/")[7]);
+				}
+
+				displayTheDay(day);
+				displayPropertyTheDay(day);
+			</script>
 		</center>
-		</table>
+	</table>
 
 
 </body>
