@@ -111,7 +111,7 @@
 
 				document.getElementById("setDate").onchange = function() {
 					var date = document.getElementById("setDate").value;
-					var url = './index?/' + date.split("-")[0] + '/' + date.split("-")[1] + '/';
+					var url = './index?/' + date.split("-")[0] + '/' + date.split("-")[1] + '/'+date.split("-")[2];
 					location.href = url;
 
 				};
@@ -119,7 +119,7 @@
 
 				var day = new Date();
 				if(url2.split("/")[5]==undefined){
-					day = new Date(url2.split("/")[5],url2.split("/")[6]-1,1);
+					day = new Date(url2.split("/")[5],url2.split("/")[6]-1,url2.split("/")[7]);
 				document.write(url2.split("/")[6]);
 }
 
