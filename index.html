@@ -108,18 +108,23 @@
 				displayToday();
 				document.write("　");
 
-				var day = new Date();
+
 				document.getElementById("setDate").onchange = function() {
 					var date = document.getElementById("setDate").value;
 					var url = './index?/' + date.split("-")[0] + '/' + date.split("-")[1] + '/';
 					location.href = url;
-					day = new Date(date.split("-")[0], date.split("-")[1], date.split("-")[2]);
 
 				};
+				var url2 = location.href;
 
-			var url = location.href ;
-			day =new Date(url.split("/")[5],url.split("/")[6],1);
-					displayPropertyTheDay(day);
+				var day = new Date();
+				if(url2.split("/")[5]==undefined){
+					day = new Date(url2.split("/")[5],url2.split("/")[6],1);
+				document.write(url2.split("/")[6]);
+}
+
+
+				displayPropertyTheDay(day);
 			</script>
 	</center>
 	</table>
