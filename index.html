@@ -48,7 +48,9 @@
 	</center>
 
 	<!-- ここにページの内容を記述します -->
-<br><br><br>
+	<br><br>
+	<center>
+		<input type="date" id="setDate" value=getDate()></center><br><br>
 	<center>
 
 		<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
@@ -70,8 +72,8 @@
 
 					var dayOfWeek = day.getDay();
 
-					var day1 = new Date(2019, (5 -1), 4);
-					var day2 = new Date(day.getFullYear(), day.getMonth() , day.getDate());
+					var day1 = new Date(2019, (5 - 1), 4);
+					var day2 = new Date(day.getFullYear(), day.getMonth(), day.getDate());
 					//差日を求める（86,400,000ミリ秒＝１日）
 
 					var termDay = (Math.floor((day2 - day1) / 86400000));
@@ -107,7 +109,13 @@
 				document.write("　");
 
 				var day = new Date();
-
+				document.getElementById("setDate").onchange = function() {
+					var date = document.getElementById("setDate").value;
+					var url = './index?/' + date.split("-")[0] + '/' + date.split("-")[1] + '/';
+					location.href = url;
+					day = new Date(date.split("-")[0], date.split("-")[1], date.split("-")[2]);
+					displayPropertyTheDay(day);
+				};
 
 				displayPropertyTheDay(day);
 			</script>
