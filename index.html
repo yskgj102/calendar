@@ -60,11 +60,10 @@
 
 
 			<script type="text/javascript" class="today">
-				function displayToday() {
-					var today = new Date();
-					var dayOfWeek = today.getDay();
+				function displayTheDay(day) {
+					var dayOfWeek = day.getDay();
 					var dayOfWeekStr = ["日", "月", "火", "水", "木", "金", "土"][dayOfWeek]; // 曜日(日本語表記)
-					var text = today.getFullYear() + "/" + (today.getMonth() + 1) + "/" + today.getDate() + "(" + dayOfWeekStr + ")";
+					var text = day.getFullYear() + "/" + (day.getMonth() + 1) + "/" + day.getDate() + "(" + dayOfWeekStr + ")";
 					document.write(text);
 				}
 
@@ -105,22 +104,25 @@
 					}
 
 				}
-				displayToday();
+					var day = new Date();
+				displayTheDay(day);
 				document.write("　");
 
 
 				document.getElementById("setDate").onchange = function() {
 					var date = document.getElementById("setDate").value;
 					var url = './index?/' + date.split("-")[0] + '/' + date.split("-")[1] + '/' + date.split("-")[2];
+
 					location.href = url;
 
 				};
 				var url2 = location.href;
-				var day = new Date();
+
 				if (url2.split("/")[5] !== undefined) {
 					day = new Date(url2.split("/")[5], url2.split("/")[6] - 1, url2.split("/")[7]);
-					document.write(url2.split("/")[5]);
+			
 				}
+				document.write("指定日");
 				displayPropertyTheDay(day);
 			</script>
 	</center>
