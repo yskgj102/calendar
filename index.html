@@ -50,7 +50,7 @@
 	<!-- ここにページの内容を記述します -->
 	<br><br>
 	<center>
-		<input type="date" id="setDate" value=getDate()></center><br><br>
+		<input type="date" id="setDate" value=""></center><br><br>
 	<center>
 
 		<table align="center" border="5" bordercolor="#339999" cellpadding="8" cellspacing="0">
@@ -116,9 +116,10 @@
 					day = new Date(date.split("-")[0], date.split("-")[1], date.split("-")[2]);
 
 				};
-				day = new Date(date.split("-")[0], date.split("-")[1], date.split("-")[2]);
 
-				displayPropertyTheDay(day);
+			var url = location.href ;
+			day =new Date(url.split("/")[5],url.split("/")[6],1);
+					displayPropertyTheDay(day);
 			</script>
 	</center>
 	</table>
