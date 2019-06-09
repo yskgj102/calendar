@@ -93,8 +93,7 @@
 					}
 					if ((termDay % 6 == 2 && day2.getDay() == 0) || (termDay % 6 == 2 && day2.getDay() == 3)) {
 						document.write("早番");
-					}
-					if (!(termDay % 6 == 3 && day2.getDay() == 4) || !(termDay % 6 == 3 && day2.getDay() == 1)) {
+					} else if (!(termDay % 6 == 3 && day2.getDay() == 4) || !(termDay % 6 == 3 && day2.getDay() == 1)) {
 						document.write("早番");
 					}
 					if (termDay % 6 == 4) {
