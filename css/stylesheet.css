@@ -20,6 +20,9 @@ header h2::after {
   border-radius: 4px;
 }
 
+.dayinfo{
+	  font-size: 22px;
+}
 footer {
   font-size: 7px;
 	position: relative;
