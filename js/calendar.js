@@ -60,7 +60,7 @@ for (i = 1; i <= enddate; i++) { //　日付を書き出す
   if (count % 7 == 0) {
     document.write('<tr>');
   }
-  document.write('<a href="./index?/',year,'/',month,'/',i,'/"><td align="right"');
+  document.write('<td align="right"');
   // if (count % 7 == 0) {
   // 	document.write(' style="color:red"');
   // }
@@ -84,7 +84,7 @@ for (i = 1; i <= enddate; i++) { //　日付を書き出す
       }
     }
   }
-  document.write('>', i, '</td></a>');
+  document.write('><a href="./index?/',year,'/',month,'/',i,'/">', i, '</a></td>');
   ++count;
   if (count % 7 == 0) {
     document.write('</tr>');
